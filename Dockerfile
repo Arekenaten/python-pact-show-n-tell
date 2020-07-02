@@ -1,8 +1,8 @@
 FROM python:3.8
-WORKDIR /pact
+WORKDIR /pact/provider
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
-ENV FLASK_APP=.
+ENV FLASK_APP=provider:app
 ENV FLASK_ENV=development
 EXPOSE 3000
 COPY . .
