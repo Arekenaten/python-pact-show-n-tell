@@ -2,11 +2,14 @@ from . import app
 
 @app.route('/')
 def home():
-   return "Congrats! You're running the example test suite to show off pact testing."
+   return {
+      'status': 200,
+      'message': "You are running the provider service!"
+   }
 
 @app.route('/endpoint01')
 def endpoint01():
    return {
       'status': 200,
-      'body': 'You got to endpoint01. Yay!'
+      'data': 'This is some data from the provider!'
    }

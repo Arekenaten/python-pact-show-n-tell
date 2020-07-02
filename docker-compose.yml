@@ -1,10 +1,18 @@
 version: "3"
 services:
     provider:
-        build: .
+        build: ./provider
         ports: 
             - "3000:3000"
         volumes: 
             - .:/pact/provider
+        environment: 
+            FLASK_ENV: development
+    consumer:
+        build: ./consumer
+        ports: 
+            - "3001:3001"
+        volumes: 
+            - .:/pact/consumer
         environment: 
             FLASK_ENV: development
