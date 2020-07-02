@@ -2,4 +2,4 @@ from . import app
 
 @app.route('/')
 def home():
-   return "hello world!"
+   return "Hello world! I will reload when you change the files!"
