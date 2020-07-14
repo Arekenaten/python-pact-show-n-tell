@@ -8,8 +8,8 @@ def home():
       'message': "You are running the consumer service!"
    }
 
-@app.route('/fetch_provider_data')
-def get_provider_endpoint():
-   r = requests.get('http://pact_provider_1:3000/endpoint01')
-   data = r.json()
-   return data
+@app.route('/user/<user_id>}')
+def get_user(user_id):
+   """Fetch a user object by user_name from the provider."""
+   uri = 'http://pact_provider_1:3000/users/' + user_id
+   return requests.get(uri).json()
