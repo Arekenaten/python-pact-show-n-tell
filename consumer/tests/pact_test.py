@@ -4,13 +4,19 @@ import unittest
 from pact import Consumer, Provider
 from consumer.fetcher import Fetcher
 
-pact = Consumer('Consumer').has_pact_with(Provider('Provider'))
-pact.start_service()
-atexit.register(pact.stop_service)
-
 # Configure your environment variables here:
 # Note, by default, a mock server will spin up on localhost:1234
 BASE_URI = 'http://localhost:1234'
+LOG_DIR = '../logs/'
+PACT_DIR = '../pacts/'
+
+pact = Consumer('Consumer').has_pact_with(
+  provider=Provider('Provider'),
+  log_dir=LOG_DIR,
+  pact_dir=PACT_DIR
+  )
+pact.start_service()
+atexit.register(pact.stop_service)
 
 
 class GetAddContract(unittest.TestCase):
