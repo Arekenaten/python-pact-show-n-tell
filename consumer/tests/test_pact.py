@@ -24,7 +24,7 @@ class GetAddContract(unittest.TestCase):
   def setUpClass(self):
     self.fetcher = Fetcher(BASE_URI)
 
-  def test_get_user(self):
+  def test_request_add(self):
     expected = {
       'sum': 27,
     }

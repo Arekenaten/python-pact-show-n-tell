@@ -1,2 +1,9 @@
 __pycache__
 venv/
+venv_p/
+venv_c/
+logs/
+log/
+pacts/
+.vscode/
+.DS_Store
